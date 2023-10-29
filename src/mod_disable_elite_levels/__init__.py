@@ -10,5 +10,5 @@ def reset_prestige(_, self, *args, **kwargs):
 
 
 @override(VehicleArenaInfoVO, "updatePrestige")
-def do_not_invalidate_prestige(orig, self, invalidate=INVALIDATE_OP.NONE, *args, **kwargs):
+def block_prestige_update(_, self, invalidate=INVALIDATE_OP.NONE, *args, **kwargs):
     return invalidate
